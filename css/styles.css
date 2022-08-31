@@ -25,6 +25,10 @@ nav a {
     margin: 0 auto;
 }
 
+.logo-text {
+    max-width: 200px;
+}
+
 footer {
     margin: 0 auto;
 }
