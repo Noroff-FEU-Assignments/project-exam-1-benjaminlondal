@@ -1,0 +1,41 @@
+:root {
+    --font_fut: 'futura-pt', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font_eaves: 'rockwell', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #FFF;
+    color: black;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+img {
+    width: 100%;
+}
+
+#header-text {
+    font-family: var(--font_eaves);
+    font-weight: 800;
+    font-size: 1.2em;
+}
+
+#slogan {
+    font-family: var(--font_eaves);
+    margin-top: 0;
+}
+
+nav a {
+    display: block;
+}
+
+.logo, .logo-text {
+    display: block;
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+footer {
+    margin: 0 auto;
+}
