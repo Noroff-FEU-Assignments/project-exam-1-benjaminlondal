@@ -15,6 +15,10 @@ img {
     width: 100%;
 }
 
+nav {
+    display: none;
+}
+
 nav a {
     display: block;
 }
@@ -27,6 +31,13 @@ nav a {
 
 .logo-text {
     max-width: 200px;
+}
+
+.hamburger {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 2em;
 }
 
 footer {
