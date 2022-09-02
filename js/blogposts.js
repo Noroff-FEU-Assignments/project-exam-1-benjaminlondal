@@ -14,18 +14,13 @@ async function getBlogs(blogPostsUrl){
         blogPosts.forEach(function(blogPost){
 
             const blogImage = blogPost._embedded?.['wp:featuredmedia'][0]['source_url'];
-            const placeholder = "https://via.placeholder.com/150";
-
-            if (blogImage ==! Image) {
-                return placeholder;
-            } else { return blogImage };
-
 
             blogContainer.innerHTML += `<div class="blog-container">
                                             <p>${blogPost.date}</p>
                                             <h2>${blogPost.title.rendered}</h2>
                                             <img  src="${blogImage}"class="blogposts-image">
                                             <p>${blogPost.excerpt.rendered}</p>
+                                            <a href="" class="postlink"> View post </a>
                                         </div>`;
 
         });

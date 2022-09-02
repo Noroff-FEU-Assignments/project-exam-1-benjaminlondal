@@ -31,6 +31,17 @@ h3 {
     font-size: 1.2em;
 }
 
+.postlink {
+    display: block;
+    text-decoration: underline;
+    text-align: center;
+    border-radius: 50px;
+    width: 150px;
+    margin: 10px auto;
+    color: black;
+    font-size: 1.6em;
+}
+
 p {
     font-family: var(--font_fut);
 }
@@ -111,16 +122,24 @@ header {
 /** MAIN BLOG**/
 .blog-content {
     display: flex;
+    flex-direction: column;
 }
 
 .blog-container {
     background-color: var(--secondary_color);
-    margin: 5px;
+    width: 300px;
+    margin: 10px auto;
+    border-radius: 25px;
+    border: 1px solid black;
 }
 
+.blog-container p {
+    margin: 10px;
+}
 .blogposts-image {
     display: block;
-    max-width: 150px;
+    max-width: 200px;
+    margin: 0 auto;
 }
 
 /** MAIN ABOUT **/
