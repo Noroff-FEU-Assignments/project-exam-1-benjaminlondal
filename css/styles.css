@@ -1,6 +1,7 @@
 :root {
     --font_fut: 'futura-pt', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font_eaves: 'rockwell', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --secondary_color: rgb(243, 227, 0,.5);
 }
 
 body {
@@ -103,10 +104,26 @@ header {
 }
 
 .latest {
-    background:rgb(243, 227, 0,.5);
+    background-color: var(--secondary_color);
     margin: 0 auto;
 }
 
+/** MAIN BLOG**/
+.blog-content {
+    display: flex;
+}
+
+.blog-container {
+    background-color: var(--secondary_color);
+    margin: 5px;
+}
+
+.blogposts-image {
+    display: block;
+    max-width: 150px;
+}
+
+/** MAIN ABOUT **/
 .about-profile {
     max-width: 200px;
     display: block;
