@@ -1,17 +1,21 @@
 :root {
     --font_fut: 'futura-pt', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font_eaves: 'rockwell', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --secondary_color: rgb(243, 227, 0,.5);
+    --white_tint: rgba(255, 255, 255, 0.5);
 }
 
 body {
     background-color: #FFF;
+    background-image: url("/images/background.png");
+    background-size: cover;
     color: black;
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
     margin: 0;
 }
+
+
 
 h1, h2, h3 {
     font-family: var(--font_eaves);
@@ -126,7 +130,7 @@ header {
 }
 
 .blog-container {
-    background-color: var(--secondary_color);
+    background-color: var(--white_tint);
     width: 300px;
     margin: 10px auto;
     border-radius: 25px;

@@ -13,7 +13,7 @@ async function getBlogs(blogPostsUrl){
 
         blogPosts.forEach(function(blogPost){
 
-            const blogImage = blogPost._embedded?.['wp:featuredmedia'][0]['source_url'];
+            const blogImage = blogPost._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
 
             blogContainer.innerHTML += `<div class="blog-container">
                                             <p>${blogPost.date}</p>
