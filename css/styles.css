@@ -147,10 +147,13 @@ header {
     margin: 0 auto;
 }
 
-.post-link {
+#post-link {
     display: block;
     text-decoration: underline;
-    margin: 0 auto;
+    text-align: center;
+    font-size: 2em;
+    color: black;
+    margin-bottom: 10px;
 }
 
 /** MAIN BLOG SPECIFIC**/
@@ -167,6 +170,7 @@ header {
 
 .wp-block-image {
     max-width: 300px;
+    height: 50%;
     margin: 0 auto;
 }
 
@@ -191,6 +195,10 @@ footer {
 
     .hamburger {
         display: none;
+    }
+
+    body {
+        background-size: contain;
     }
 
     nav {

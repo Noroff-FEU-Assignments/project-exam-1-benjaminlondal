@@ -19,7 +19,6 @@ async function getPost(postUrl){
         postContainer.innerHTML += `<div class="blog-specific">
                                         <h1>${post.title.rendered}</h1>
                                         ${post.content.rendered}
-                                        
                                     </div>`;
 
   } catch(error) {

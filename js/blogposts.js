@@ -20,8 +20,9 @@ async function getBlogs(blogPostsUrl){
                                             <h2>${blogPost.title.rendered}</h2>
                                             <img  src="${blogImage}"class="blogposts-image">
                                             <p>${blogPost.excerpt.rendered}</p>
-                                            <a href="blog-specific.html?id=${blogPost.id}" class="post-link">View post</a>
-                                        </div>`;
+                                            <a href="blog-specific.html?id=${blogPost.id}" id="post-link">View post</a>
+                                        </div>
+                                        <a href="`;
 
         });
     } catch(error) {
