@@ -116,6 +116,7 @@ header {
 .home-content {
     display: block;
     margin: 0 auto;
+    border-radius: 20px;
 }
 
 .latest {
@@ -146,6 +147,29 @@ header {
     margin: 0 auto;
 }
 
+.post-link {
+    display: block;
+    text-decoration: underline;
+    margin: 0 auto;
+}
+
+/** MAIN BLOG SPECIFIC**/
+
+.post-container {
+    max-width: 300px;
+    margin:0 auto;
+}
+
+.blog-specific {
+    display: flex;
+    flex-direction: column;
+}
+
+.wp-block-image {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
 /** MAIN ABOUT **/
 .about-profile {
     max-width: 200px;
@@ -161,4 +185,46 @@ header {
 
 footer {
     margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+
+    .hamburger {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+    }
+
+    .introduction {
+        display: flex;
+        max-width: 1000px;
+        justify-content: space-evenly;
+    }
+
+    .introduction p {
+        max-width: 480px;
+    }
+
+    .home-content {
+        max-width: 480px;
+    }
+
+    /** MAIN BLOG SPECIFIC**/
+
+    .post-container {
+        max-width: 1000px;
+
+    }
+
+    .wp-block-image {
+        max-width: 500px;
+    }
+
+
+
+
 }
