@@ -5,11 +5,13 @@ const postContainer = document.querySelector(".latest-container");
 
 async function getBlogs(blogPostsUrl){
 
+    showLoadingIndicator()
 
     try {
         const response = await fetch(blogPostsUrl);
         const blogPosts = await response.json();
 
+        hideLoadingIndicator()
 
         for(var i = 0; i < blogPosts.length; i++) {
 
