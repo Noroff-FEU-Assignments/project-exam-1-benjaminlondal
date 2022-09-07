@@ -3,7 +3,7 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const postUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts/" + id;
+const postUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?_embed" + id;
 
 async function getPost(postUrl){
 
@@ -13,11 +13,14 @@ async function getPost(postUrl){
 
       console.log(post);
 
+        const blogImage = post._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
+
 
         document.title = `${post.title.rendered} | Nice to Mead you`;
 
         postContainer.innerHTML += `<div class="blog-specific">
                                         <h1>${post.title.rendered}</h1>
+                                        ${blogImage}
                                         ${post.content.rendered}
                                     </div>`;
 
