@@ -3,7 +3,7 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const postUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?_embed" + id;
+const postUrl =  `https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts/${id}?_embed`;
 
 async function getPost(postUrl){
 
@@ -20,7 +20,7 @@ async function getPost(postUrl){
 
         postContainer.innerHTML += `<div class="blog-specific">
                                         <h1>${post.title.rendered}</h1>
-                                        ${blogImage}
+                                        <img  src="${blogImage}"class="blogposts-image">
                                         ${post.content.rendered}
                                     </div>`;
 
