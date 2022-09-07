@@ -25,6 +25,7 @@ h1, h2, h3 {
 
 h1 {
     font-size: 1.8em;
+    margin-top: 50px;
 }
 
 h2 {
@@ -48,6 +49,30 @@ h3 {
 
 p {
     font-family: var(--font_fut);
+}
+
+.post-link {
+    display: block;
+    font-family: var(--font_eaves);
+    text-decoration: underline;
+    text-align: center;
+    font-size: 1.5em;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.btn {
+    width: 100%;
+    max-width: 150px;
+    margin: 10px;
+    font-family: var(--font_eaves);
+    text-transform: uppercase;
+    font-size: 1.2em;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    text-decoration: underline;
 }
 
 /** Header **/
@@ -96,6 +121,8 @@ header {
     border-bottom: 1px solid black;
 }
 
+
+
 /** MAIN **/
 
 .introduction {
@@ -112,13 +139,25 @@ header {
 
 .home-content {
     display: block;
+    width: 100%;
     margin: 0 auto;
     border-radius: 20px;
+
 }
 
 .latest {
-    background-color: var(--secondary_color);
-    margin: 0 auto;
+    margin: 100px auto 0;
+}
+
+.latest-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 50px 0;
 }
 
 /** MAIN BLOG**/
@@ -128,11 +167,8 @@ header {
 }
 
 .blog-container {
-    background-color: var(--white_tint);
     width: 300px;
-    margin: 10px auto;
-    border-radius: 25px;
-    border: 1px solid black;
+    margin: 50px auto 0px;
 }
 
 .blog-container p {
@@ -140,17 +176,8 @@ header {
 }
 .blogposts-image {
     display: block;
-    max-width: 200px;
+    max-width: 300px;
     margin: 0 auto;
-}
-
-#post-link {
-    display: block;
-    text-decoration: underline;
-    text-align: center;
-    font-size: 2em;
-    color: black;
-    margin-bottom: 10px;
 }
 
 /** MAIN BLOG SPECIFIC**/
@@ -163,11 +190,6 @@ header {
 .blog-specific {
     display: flex;
     flex-direction: column;
-}
-
-.wp-block-image {
-    width: 100%;
-    max-width: 250px;
 }
 
 /** MAIN ABOUT **/
@@ -215,6 +237,35 @@ footer {
 
     .home-content {
         max-width: 480px;
+    }
+
+    .latest-container {
+        flex-direction: row;
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 10px
+    }
+
+    .latest-posts {
+        padding: 30px;
+        width: 100%;
+        max-width: 400px;
+        border: none;
+        margin-top: 0px;
+    }
+
+    /** MAIN BLOG ***/
+
+    .blog-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        width: 100%;
+        max-width: 1000px;
+        min-width: 0;
+        margin: auto;
+        margin-top: 50px;
+        gap: 50px;
     }
 
     /** MAIN BLOG SPECIFIC**/
