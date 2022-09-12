@@ -20,8 +20,8 @@ async function getPost(postUrl){
 
         postContainer.innerHTML += `<div class="blog-specific">
                                         <h1>${post.title.rendered}</h1>
-                                        <img  src="${blogImage}"class="blogposts-image">
-                                        ${post.content.rendered}
+                                        <img  src="${blogImage}"class="blogposts-image specific-image">
+                                        <p>${post.content.rendered}</p>
                                     </div>`;
 
   } catch(error) {
