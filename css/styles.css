@@ -194,6 +194,12 @@ header {
     margin: 0 auto;
 }
 
+#load-more {
+    display: block;
+    font-size: 3em;
+    margin: 100px auto;
+}
+
 /** MAIN BLOG SPECIFIC**/
 
 .post-container {
