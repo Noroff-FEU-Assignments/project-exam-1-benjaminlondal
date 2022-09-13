@@ -4,6 +4,6 @@ function showLoadingIndicator() {
     loader.classList.add("loading");
 }
  
- function hideLoadingIndicator() {
+function hideLoadingIndicator() {
      loader.classList.remove("loading");
 }

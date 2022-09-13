@@ -3,13 +3,17 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-const postUrl =  `https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts/${id}?_embed`;
+const postUrl = `https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts/${id}?_embed`;
 
 async function getPost(postUrl){
+
+  showLoadingIndicator()
 
   try {
       const response = await fetch(postUrl);
       const post = await response.json();
+
+      hideLoadingIndicator()
 
       console.log(post);
 

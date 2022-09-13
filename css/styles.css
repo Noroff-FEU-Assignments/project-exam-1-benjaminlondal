@@ -194,10 +194,18 @@ header {
     margin: 0 auto;
 }
 
+.bloglist {
+    max-height: 290px;
+}
+
 #load-more {
     display: block;
-    font-size: 3em;
+    font-size: 2em;
     margin: 100px auto;
+    background-color: white;
+    text-decoration: underline;
+    border: none;
+    cursor: pointer;
 }
 
 /** MAIN BLOG SPECIFIC**/
@@ -300,6 +308,15 @@ footer {
     
     .blog-specific {
         max-width: 800px;
+    }
+
+    /** ABOUT **/
+    .about-text {
+        max-width: 600px;
+    }
+
+    .about-profile {
+        max-width: 400px;
     }
 
 

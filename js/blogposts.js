@@ -1,17 +1,18 @@
 const blogContainer = document.querySelector(".blog-content");
 const loadMoreBtn = document.getElementById("load-more");
-let addedNr = 1;
+let pageNr = 1;
 
-let blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?page=" + addedNr + "&_embed";
-
-console.log(blogPostsUrl);
+let blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?page=" + pageNr + "&_embed";
 
 async function getBlogs(blogPostsUrl) {
 
+    showLoadingIndicator()
 
     try {
         const response = await fetch(blogPostsUrl);
         const blogPosts = await response.json();
+
+        hideLoadingIndicator()
 
 
         blogPosts.forEach(function(blogPost){
@@ -22,7 +23,7 @@ async function getBlogs(blogPostsUrl) {
             blogContainer.innerHTML += `<div class="blog-container">
                                             <p>${blogPost.modified}</p>
                                             <h2>${blogPost.title.rendered}</h2>
-                                            <img  src="${blogImage}"class="blogposts-image">
+                                            <a href="blog-specific.html?id=${blogPost.id}"><img src="${blogImage}" class="blogposts-image specific-image"></a>
                                             <p>${blogPost.excerpt.rendered}</p>
                                             <a href="blog-specific.html?id=${blogPost.id}" class="post-link">View post</a>
                                         </div>`;
@@ -36,8 +37,8 @@ async function getBlogs(blogPostsUrl) {
 }
 
 function loadMore() {
-    addedNr++;
-    blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?page=" + addedNr + "&_embed";
+    pageNr++;
+    blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?page=" + pageNr + "&_embed";
     getBlogs(blogPostsUrl);
 }
 

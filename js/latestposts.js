@@ -22,7 +22,7 @@ async function getBlogs(blogPostsUrl){
             const blogImage = blogPosts[i]._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
 
             postContainer.innerHTML += `<div class="blog-container latest-posts">
-                                            <img  src="${blogImage}"class="blogposts-image">
+                                            <a href="blog-specific.html?id=${blogPosts[i].id}"><img src="${blogImage}" class="blogposts-image specific-image"></a>
                                             <h3>${blogPosts[i].title.rendered}</h3>
                                             <p>${blogPosts[i].excerpt.rendered}</p>
                                             <a href="blog-specific.html?id=${blogPosts[i].id}" class="post-link latest-link">Read more</a>
