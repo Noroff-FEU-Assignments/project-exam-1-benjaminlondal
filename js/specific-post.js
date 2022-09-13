@@ -1,3 +1,5 @@
+import { showLoadingIndicator, hideLoadingIndicator } from "./components/loadingindicator.js";
+
 const postContainer = document.querySelector(".post-container");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -24,7 +26,7 @@ async function getPost(postUrl){
 
         postContainer.innerHTML += `<div class="blog-specific">
                                         <h1>${post.title.rendered}</h1>
-                                        <img  src="${blogImage}"class="blogposts-image specific-image">
+                                        <img  src="${blogImage}" class="blogposts-image specific-image">
                                         <p>${post.content.rendered}</p>
                                     </div>`;
 

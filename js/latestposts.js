@@ -1,3 +1,5 @@
+import { showLoadingIndicator, hideLoadingIndicator } from "./components/loadingindicator.js";
+
 const blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?_embed";
 const postContainer = document.querySelector(".latest-container");
 

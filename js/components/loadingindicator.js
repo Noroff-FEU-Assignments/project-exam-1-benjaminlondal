@@ -1,9 +1,7 @@
-const loader = document.querySelector(".loader");
-
-function showLoadingIndicator() {
-    loader.classList.add("loading");
+export function showLoadingIndicator() {
+    document.querySelector(".loader").classList.add("loading");
 }
  
-function hideLoadingIndicator() {
-     loader.classList.remove("loading");
+export function hideLoadingIndicator() {
+     document.querySelector(".loader").classList.remove("loading");
 }

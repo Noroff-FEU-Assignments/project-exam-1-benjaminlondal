@@ -52,6 +52,7 @@ h3 {
 
 p {
     font-family: var(--font_fut);
+    font-size: 1.5em;
 }
 
 .post-link {
@@ -108,8 +109,9 @@ nav a {
     display: block;
     text-decoration: none;
     margin: 10px;
-    font-size: 1.5em;
+    font-size: 1.6em;
     color: black;
+    font-family: var(--font_eaves);
 }
 
 .logo, .logo-text {
@@ -149,7 +151,6 @@ header {
 
 .introduction {
     margin-top: 50px;
-    padding: 10px;
     margin: 0 auto;
     width: 100%;
     max-width: 300px;
@@ -162,8 +163,9 @@ header {
 .home-content {
     display: block;
     width: 100%;
+    max-width: 300px;
     margin: 0 auto;
-    border-radius: 20px;
+    padding: 20px;
 }
 
 .latest {
@@ -175,6 +177,10 @@ header {
     flex-direction: column;
     max-width: 250px;
     margin: 0 auto;
+}
+
+.latest-posts p {
+    font-size: 1.2em;
 }
 
 
@@ -242,6 +248,12 @@ footer {
     margin: 0 auto;
 }
 
+@media (min-width: 600px) {
+    .introduction,.post-container, .latest-container {
+        max-width: 500px;
+    }
+}
+
 @media (min-width: 1024px) {
 
     .hamburger {
@@ -256,16 +268,16 @@ footer {
 
     .introduction {
         display: flex;
-        max-width: 1000px;
-        justify-content: space-evenly;
-    }
-
-    .introduction p {
-        max-width: 480px;
+        justify-content: space-around;
+        max-width: 1200px;
     }
 
     .home-content {
-        max-width: 480px;
+        max-height: 400px;
+    }
+
+    .home-text {
+        padding: 20px;
     }
 
     .latest-container {
@@ -289,8 +301,7 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, 1fr);
         width: 100%;
-        max-width: 1500px;
-        min-width: 0;
+        max-width: 1200px;
         margin: auto;
         margin-top: 50px;
     }

@@ -1,15 +1,27 @@
+import { showLoadingIndicator, hideLoadingIndicator } from "./components/loadingindicator.js";
+
 const blogContainer = document.querySelector(".blog-content");
 const loadMoreBtn = document.getElementById("load-more");
-let pageNr = 1;
+let pageNr = 0;
 
-let blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?page=" + pageNr + "&_embed";
 
-async function getBlogs(blogPostsUrl) {
+
+async function getBlogs() {
+
+    pageNr++;
+    const blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?page=" + pageNr + "&_embed";
 
     showLoadingIndicator()
 
     try {
         const response = await fetch(blogPostsUrl);
+
+        const totalPages = response.headers.get("x-wp-totalpages");
+
+        if (Number(totalPages) === pageNr) {
+            loadMoreBtn.style.display = "none";
+        }
+
         const blogPosts = await response.json();
 
         hideLoadingIndicator()
@@ -36,15 +48,10 @@ async function getBlogs(blogPostsUrl) {
 
 }
 
-function loadMore() {
-    pageNr++;
-    blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?page=" + pageNr + "&_embed";
-    getBlogs(blogPostsUrl);
-}
 
-loadMoreBtn.addEventListener('click', loadMore);
+loadMoreBtn.addEventListener('click', getBlogs);
 
-getBlogs(blogPostsUrl);
+getBlogs();
 
 
 
