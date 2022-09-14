@@ -1,7 +1,7 @@
 :root {
-    --font_fut: 'futura-pt', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font_eaves: 'rockwell', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --white_tint: rgba(255, 255, 255, 0.5);
+    --color-primary: #F3E300;
+    --font-eaves: 'mr-eaves-xl-modern', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-fut: 'futura-pt', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -19,8 +19,8 @@ main {
 }
 
 
-h1, h2, h3 {
-    font-family: var(--font_eaves);
+h1, h2, h3, #latest-heading {
+    font-family: var(--font-eaves);
     font-weight: 500;
     text-align: center;
 }
@@ -34,7 +34,7 @@ h2 {
     font-size: 1.6em;
 }
 
-h3 {
+h3, #latest-heading {
     font-size: 1.5em;
     text-align: left;
 }
@@ -51,13 +51,13 @@ h3 {
 }
 
 p {
-    font-family: var(--font_fut);
+    font-family: var(--font-fut);
     font-size: 1.5em;
 }
 
 .post-link {
     display: block;
-    font-family: var(--font_eaves);
+    font-family: var(--font-eaves);
     text-decoration: underline;
     text-align: center;
     font-size: 1.5em;
@@ -111,7 +111,7 @@ nav a {
     margin: 10px;
     font-size: 1.6em;
     color: black;
-    font-family: var(--font_eaves);
+    font-family: var(--font-eaves);
 }
 
 .logo, .logo-text {
@@ -171,9 +171,36 @@ header {
     margin: 100px auto 0;
 }
 
-.latest-post {
+.card {
+    text-decoration: none;
+}
+
+.card h3, p {
+    color: black;
+}
+
+.card h3 {
+    font: var(--font-eaves);
+    font-size: 2em;
+}
+
+.latest-posts {
+    width: 100%;
     max-width: 250px;
-    margin: 0 auto;
+    margin: 20px;
+    flex: 0 0 auto;
+    object-fit: cover;
+    overflow: hidden;
+    transform: scale(.95);
+    transition: all  .3s;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.latest-posts:hover {
+    transform: scale(1);
 }
 
 .slide-container {
@@ -189,10 +216,30 @@ header {
     margin: 0 10px;
 }
 
-#slider {
+.latest-container {
     width: 100%;
     margin: 0 auto;
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.latest-container::-webkit-scrollbar {
+    height: 5px;
+    width: 2px;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+}
+
+.latest-container::-webkit-scrollbar-track {
+    --webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5)
+}
+
+.latest-container::-webkit-scrollbar-thumb {
+    background-color: black;
+    outline: 1px solid var(--color-primary);
 }
 
 
@@ -298,13 +345,6 @@ footer {
 
     .home-text {
         padding: 20px;
-    }
-
-    .latest-posts {
-        padding: 30px;
-        width: 100%;
-        border: none;
-        margin: 0 auto 50px;
     }
 
     /** MAIN BLOG ***/
