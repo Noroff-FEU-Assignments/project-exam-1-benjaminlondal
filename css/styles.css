@@ -212,7 +212,7 @@ header {
 }
 
 .arrow {
-    width: 50px;
+    width: 10px;
     margin: 0 10px;
 }
 
@@ -327,6 +327,11 @@ footer {
 
     .latest-container {
         max-width: 500px;
+    }
+
+    .arrow {
+        width: 50px;
+        margin: 0 10px;
     }
 }
 
