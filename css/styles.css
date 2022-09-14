@@ -195,6 +195,11 @@ header {
     transition: all  .3s;
 }
 
+.arrow {
+    margin: 0 10px;
+    max-width: 10px;
+}
+
 .arrow:hover {
     cursor: pointer;
 }
@@ -209,11 +214,6 @@ header {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-}
-
-.arrow {
-    width: 10px;
-    margin: 0 10px;
 }
 
 .latest-container {
@@ -242,8 +242,6 @@ header {
     background-color: black;
     outline: 1px solid var(--color-primary);
 }
-
-
 
 .latest-posts p {
     font-size: 1.2em;
@@ -288,6 +286,10 @@ header {
     margin: 0 auto;
 }
 
+.specific-image {
+    max-height: 300px;
+}
+
 .blog-specific {
     display: flex;
     flex-direction: column;
@@ -327,7 +329,6 @@ header {
 
     .arrow {
         width: 50px;
-        margin: 0 10px;
     }
 }
 
