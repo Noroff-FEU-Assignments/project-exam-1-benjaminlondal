@@ -311,10 +311,6 @@ header {
     padding: 20px;
 }
 
-footer {
-    font-size: 1em;
-}
-
 @media (min-width: 600px) {
     .introduction,.post-container, .latest-post {
         max-width: 500px;
