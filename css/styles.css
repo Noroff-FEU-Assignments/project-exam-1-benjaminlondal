@@ -224,6 +224,7 @@ header {
     align-items: center;
     flex-wrap: nowrap;
     overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 .latest-container::-webkit-scrollbar {
@@ -263,7 +264,7 @@ header {
 .blogposts-image {
     width: 100%;
     margin: 0 auto;
-    max-height: 275px;
+    max-height: 170px;
 }
 
 .bloglist {
@@ -317,6 +318,12 @@ footer {
 @media (min-width: 600px) {
     .introduction,.post-container, .latest-post {
         max-width: 500px;
+    }
+
+    .specific-image {
+        max-width: 500px;
+        max-height: 500px;
+        
     }
 }
 

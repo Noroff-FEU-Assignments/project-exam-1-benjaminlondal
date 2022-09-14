@@ -6,7 +6,6 @@ const latestPosts = document.querySelector(".latest-posts");
 const slider = document.getElementById("slider");
 const leftBtn = document.getElementById("slide-left");
 const rightBtn = document.getElementById("slide-right");
-const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
 
 
 async function getBlogs(blogPostsUrl){
@@ -39,20 +38,27 @@ async function getBlogs(blogPostsUrl){
 }
 
 leftBtn.addEventListener("click", () => {
-    slider.scrollLeft -= 880;
+    slider.scrollBy(-870, 0);
 });
 
 rightBtn.addEventListener("click", () => {
-    slider.scrollLeft += 880;
+    slider.scrollBy(870, 0);
 });
 
+const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
 function autoScroll() {
-    if (slider.scrollLeft > (maxScrollLeft - 1)) {
-        slider.scrollLeft -= maxScrollLeft;
+    if (postContainer.scrollLeft > (maxScrollLeft - 1)) {
+        postContainer.scrollLeft -= maxScrollLeft;
     } else {
-        slider.scrollLeft += 1;
+        postContainer.scrollLeft += 10;
     }
 }
 
+let scroll = setInterval(autoScroll, 50);
+
+window.addEventListener("resize", function() {
+    width = slider.offsetWidth
+});
 
 getBlogs(blogPostsUrl);
