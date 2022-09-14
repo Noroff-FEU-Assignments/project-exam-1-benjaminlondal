@@ -37,6 +37,7 @@ async function getBlogs(blogPostsUrl){
     }
 }
 
+
 leftBtn.addEventListener("click", () => {
     slider.scrollBy(-870, 0);
 });
@@ -58,7 +59,8 @@ function autoScroll() {
 let scroll = setInterval(autoScroll, 50);
 
 window.addEventListener("resize", function() {
-    width = slider.offsetWidth
+   let width = slider.offsetWidth;
 });
 
 getBlogs(blogPostsUrl);
+

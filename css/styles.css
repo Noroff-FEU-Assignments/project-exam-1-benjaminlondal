@@ -224,7 +224,6 @@ header {
     align-items: center;
     flex-wrap: nowrap;
     overflow-x: auto;
-    scroll-behavior: smooth;
 }
 
 .latest-container::-webkit-scrollbar {
