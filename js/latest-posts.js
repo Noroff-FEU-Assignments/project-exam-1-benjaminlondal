@@ -46,18 +46,6 @@ rightBtn.addEventListener("click", () => {
     slider.scrollBy(870, 0);
 });
 
-const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-
-function autoScroll() {
-    if (postContainer.scrollLeft > (maxScrollLeft - 1)) {
-        postContainer.scrollLeft -= maxScrollLeft;
-    } else {
-        postContainer.scrollLeft += 10;
-    }
-}
-
-let scroll = setInterval(autoScroll, 50);
-
 window.addEventListener("resize", function() {
    let width = slider.offsetWidth;
 });

@@ -197,7 +197,7 @@ header {
 
 .arrow {
     margin: 0 10px;
-    max-width: 10px;
+    width: 10px;
 }
 
 .arrow:hover {
@@ -327,9 +327,7 @@ header {
         max-width: 500px;
     }
 
-    .arrow {
-        width: 50px;
-    }
+    
 }
 
 @media (min-width: 1024px) {
@@ -357,6 +355,10 @@ header {
 
     .home-text {
         padding: 20px;
+    }
+
+    .arrow {
+        width: 50px;
     }
 
     .latest-container {
