@@ -165,19 +165,37 @@ header {
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
-    padding: 20px;
 }
 
 .latest {
     margin: 100px auto 0;
 }
 
-.latest-container {
-    display: flex;
-    flex-direction: column;
+.latest-post {
     max-width: 250px;
     margin: 0 auto;
 }
+
+.slide-container {
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.arrow {
+    width: 50px;
+    margin: 0 10px;
+}
+
+#slider {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+
 
 .latest-posts p {
     font-size: 1.2em;
@@ -198,6 +216,7 @@ header {
 .blogposts-image {
     width: 100%;
     margin: 0 auto;
+    max-height: 275px;
 }
 
 .bloglist {
@@ -206,9 +225,9 @@ header {
 
 #load-more {
     display: block;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 100px auto;
-    background-color: white;
+    background: rgba(255,255,255, 0);
     text-decoration: underline;
     border: none;
     cursor: pointer;
@@ -245,11 +264,11 @@ header {
 }
 
 footer {
-    margin: 0 auto;
+    margin: 50px auto 20px;
 }
 
 @media (min-width: 600px) {
-    .introduction,.post-container, .latest-container {
+    .introduction,.post-container, .latest-post {
         max-width: 500px;
     }
 }
@@ -274,17 +293,11 @@ footer {
 
     .home-content {
         max-height: 400px;
+        padding: 20px;
     }
 
     .home-text {
         padding: 20px;
-    }
-
-    .latest-container {
-        flex-direction: row;
-        max-width: 1500px;
-        margin: 0 auto;
-        padding: 10px;
     }
 
     .latest-posts {

@@ -1,7 +1,7 @@
 import { showLoadingIndicator, hideLoadingIndicator } from "./components/loadingindicator.js";
 
 const blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?_embed";
-const postContainer = document.querySelector(".latest-container");
+const postContainer = document.querySelector(".latest-post");
 
 
 
@@ -17,7 +17,7 @@ async function getBlogs(blogPostsUrl){
 
         for(var i = 0; i < blogPosts.length; i++) {
 
-            if (i === 3) {
+            if (i === 10) {
                 break;
             }
 
