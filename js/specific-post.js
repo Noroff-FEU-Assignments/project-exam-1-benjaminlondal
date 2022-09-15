@@ -19,42 +19,38 @@ async function getPost(postUrl){
 
       console.log(post);
 
-        const blogImage = post._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
+      const blogImage = post._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
 
+      document.title = `${post.title.rendered} | Nice to Mead you`;
+      
 
-        document.title = `${post.title.rendered} | Nice to Mead you`;
-
-        postContainer.innerHTML += `
-                                    <div class="blog-specific">
+      postContainer.innerHTML += `<div class="blog-specific">
                                         <h1>${post.title.rendered}</h1>
-                                        <img  src="${blogImage}" id="modal-closed" class="blogposts-image specific-image">
+                                        <img  src="${blogImage}" id="modal-image" class="blogposts-image specific-image">
                                         <p>${post.content.rendered}</p>
                                     </div>`;
 
+      const modal = document.querySelector(".modal");
+      const showModal = document.getElementById("modal-image");
+      const getImage = document.getElementById("get-image");
+                                                                  
+      showModal.addEventListener("click", () => {
+            modal.style.display = "block";
+            getImage.src = blogImage;
+      });
+                                                                  
+      window.addEventListener("click", function (event) {
+            const modal = document.querySelector(".modal");
+            if (event.target === modal) {
+            modal.style.display = "none";
+            }
+      });
+
+                                
   } catch(error) {
       console.log(error);
   }
+  
 }
-
-setTimeout(() => {
-  const modal = document.querySelector(".modal");
-  const showModal = document.getElementById("modal-closed");
-  const getImage = document.getElementById("get-image");
-
-showModal.addEventListener("click", () => {
-  modal.style.display = "block";
-  getImage.src = this.src;
-});
-
-console.log(getImage)
-
-}, "1000");
-
-const modal = document.querySelector(".modal");
-
-modal.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
 
 getPost(postUrl);

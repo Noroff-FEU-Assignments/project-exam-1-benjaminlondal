@@ -14,6 +14,7 @@ export function displayNavigation() {
 
   hamburgerMenu.onclick = displayHamburgerMenu;
 
-}
+};
+    
 
 
