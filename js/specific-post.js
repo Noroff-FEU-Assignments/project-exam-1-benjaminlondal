@@ -24,9 +24,12 @@ async function getPost(postUrl){
 
         document.title = `${post.title.rendered} | Nice to Mead you`;
 
-        postContainer.innerHTML += `<div class="blog-specific">
+        postContainer.innerHTML += `<div id="myModal" class="modal">
+                                        <img  src="${blogImage}" id="modal-open" class="blogposts-image specific-image">
+                                    </div>
+                                    <div class="blog-specific">
                                         <h1>${post.title.rendered}</h1>
-                                        <img  src="${blogImage}" class="blogposts-image specific-image">
+                                        <img  src="${blogImage}" id="modal-closed" class="blogposts-image specific-image">
                                         <p>${post.content.rendered}</p>
                                     </div>`;
 
@@ -34,5 +37,15 @@ async function getPost(postUrl){
       console.log(error);
   }
 }
+
+setTimeout(() => {
+  const modal = document.getElementById("modal-open");
+  const showModal = document.getElementById("modal-closed");
+
+showModal.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+}, "1000");
 
 getPost(postUrl);

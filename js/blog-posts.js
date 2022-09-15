@@ -34,8 +34,8 @@ async function getBlogs() {
 
             blogContainer.innerHTML += `<div class="blog-container">
                                             <p>${blogPost.modified}</p>
-                                            <h2>${blogPost.title.rendered}</h2>
                                             <a href="blog-specific.html?id=${blogPost.id}"><img src="${blogImage}" class="blogposts-image specific-image"></a>
+                                            <h2>${blogPost.title.rendered}</h2>
                                             <p>${blogPost.excerpt.rendered}</p>
                                             <a href="blog-specific.html?id=${blogPost.id}" class="post-link">View post</a>
                                         </div>`;
