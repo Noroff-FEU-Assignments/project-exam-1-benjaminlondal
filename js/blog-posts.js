@@ -31,10 +31,13 @@ async function getBlogs() {
 
 
             const blogImage = blogPost._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
+            const blogImageAlt = blogPost._embedded?.["wp:featuredmedia"][0].alt_text;
+
+            console.log(blogImageAlt);
 
             blogContainer.innerHTML += `<div class="blog-container">
                                             <p>${blogPost.modified}</p>
-                                            <a href="blog-specific.html?id=${blogPost.id}"><img src="${blogImage}" class="blogposts-image specific-image"></a>
+                                            <a href="blog-specific.html?id=${blogPost.id}"><img src="${blogImage}" alt="${blogImageAlt}" class="blogposts-image specific-image"></a>
                                             <h2>${blogPost.title.rendered}</h2>
                                             <p>${blogPost.excerpt.rendered}</p>
                                             <a href="blog-specific.html?id=${blogPost.id}" class="post-link">View post</a>

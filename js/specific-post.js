@@ -20,13 +20,14 @@ async function getPost(postUrl){
       console.log(post);
 
       const blogImage = post._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
+      const blogImageAlt = post._embedded?.["wp:featuredmedia"][0].alt_text;
 
       document.title = `${post.title.rendered} | Nice to Mead you`;
       
 
       postContainer.innerHTML += `<div class="blog-specific">
                                         <h1>${post.title.rendered}</h1>
-                                        <img  src="${blogImage}" id="modal-image" class="blogposts-image specific-image">
+                                        <img  src="${blogImage}" alt="${blogImageAlt}" id="modal-image" class="blogposts-image specific-image">
                                         <p>${post.content.rendered}</p>
                                     </div>`;
 

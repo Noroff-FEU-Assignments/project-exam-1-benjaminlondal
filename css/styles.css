@@ -338,6 +338,10 @@ header {
     max-height: 550px;
     border-radius: 10px;
 }
+
+#modal-image {
+    cursor: pointer;
+}
     
 
 @media (min-width: 600px) {

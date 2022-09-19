@@ -21,9 +21,10 @@ async function getBlogs(blogPostsUrl){
         blogPosts.forEach(function(blogPosts) {
 
             const blogImage = blogPosts._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
+            const blogImageAlt = blogPosts._embedded?.["wp:featuredmedia"][0].alt_text;
 
             postContainer.innerHTML += `<div class="latest-posts">
-                                            <a href="blog-specific.html?id=${blogPosts.id}" class="card"><img src="${blogImage}" class="blogposts-image specific-image">
+                                            <a href="blog-specific.html?id=${blogPosts.id}" class="card"><img src="${blogImage}" alt="${blogImageAlt}" class="blogposts-image specific-image">
                                             <h3 id="latest-heading">${blogPosts.title.rendered}</h3>
                                             <p>${blogPosts.excerpt.rendered}</p>
                                             <a href="blog-specific.html?id=${blogPosts.id}" class="post-link latest-link">Read more</a>
