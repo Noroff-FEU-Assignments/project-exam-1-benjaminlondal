@@ -25,7 +25,10 @@ async function getPost(postUrl){
       document.title = `${post.title.rendered} | Nice to Mead you`;
       
 
-      postContainer.innerHTML += `<div class="blog-specific">
+      postContainer.innerHTML += `<div id="myModal" class="modal">
+                                    <img id="get-image" alt="${blogImageAlt}" class="blogposts-image specific-image">
+                                    </div>
+                                    <div class="blog-specific">
                                         <h1>${post.title.rendered}</h1>
                                         <img  src="${blogImage}" alt="${blogImageAlt}" id="modal-image" class="blogposts-image specific-image">
                                         <p>${post.content.rendered}</p>

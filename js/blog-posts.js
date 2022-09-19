@@ -29,9 +29,8 @@ async function getBlogs() {
 
         blogPosts.forEach(function(blogPost){
 
-
             const blogImage = blogPost._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
-            const blogImageAlt = blogPost._embedded?.["wp:featuredmedia"][0].alt_text;
+            const blogImageAlt = blogPost._embedded["wp:featuredmedia"]?.[0].alt_text ?? "Missing alt text";
 
             console.log(blogImageAlt);
 

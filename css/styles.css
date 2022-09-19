@@ -218,7 +218,7 @@ header {
 
 .latest-container {
     width: 100%;
-    max-width: 300px;
+    max-width: 260px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
@@ -342,7 +342,55 @@ header {
 #modal-image {
     cursor: pointer;
 }
-    
+
+/** CONTACT **/
+
+
+.contact {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea{
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+label {
+    margin: 5px;
+    text-align: left;
+    font-size: 1.5em;
+}
+
+textarea {
+    height: 200px;
+}
+
+#send {
+    width: 100%;
+    margin-top: 25px;
+    padding: 5px;
+}
+
+.feedback {
+    display: none;
+    text-align: center;
+    border: 2px solid red;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: black;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+#send:disabled {
+    cursor: not-allowed;
+    background-color: grey;
+}
 
 @media (min-width: 600px) {
     .introduction,.post-container, .latest-post {
@@ -430,6 +478,17 @@ header {
 
     .about-profile {
         max-width: 400px;
+    }
+
+    /** CONTACT **/
+
+    .contact {
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    #send {
+        max-height: 60px;
     }
 
 

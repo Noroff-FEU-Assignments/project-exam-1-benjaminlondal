@@ -21,7 +21,7 @@ async function getBlogs(blogPostsUrl){
         blogPosts.forEach(function(blogPosts) {
 
             const blogImage = blogPosts._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
-            const blogImageAlt = blogPosts._embedded?.["wp:featuredmedia"][0].alt_text;
+            const blogImageAlt = blogPosts._embedded["wp:featuredmedia"]?.[0].alt_text ?? "Missing alt text";
 
             postContainer.innerHTML += `<div class="latest-posts">
                                             <a href="blog-specific.html?id=${blogPosts.id}" class="card"><img src="${blogImage}" alt="${blogImageAlt}" class="blogposts-image specific-image">
