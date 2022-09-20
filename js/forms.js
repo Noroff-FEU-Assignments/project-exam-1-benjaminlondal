@@ -48,6 +48,7 @@ function enableSubmitForm() {
 
 fullName.addEventListener("keyup", enableSubmitForm);
 email.addEventListener("keyup", enableSubmitForm);
+subject.addEventListener("keyup", enableSubmitForm);
 message.addEventListener("keyup", enableSubmitForm);
 
 function checkLength(value, len) {

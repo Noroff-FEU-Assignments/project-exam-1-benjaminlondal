@@ -16,6 +16,7 @@ body {
 main {
     background-image: url("/images/background.png");
     background-size: contain no-repeat;
+    padding-bottom: 30px;
 }
 
 
@@ -39,6 +40,16 @@ h3, #latest-heading {
     text-align: left;
 }
 
+.cta {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    font-size: 1.2em;
+    font-family: var(--font-eaves);
+}
 .postlink {
     display: block;
     text-decoration: underline;
@@ -145,9 +156,7 @@ header {
     border-bottom: 1px solid black;
 }
 
-
-
-/** MAIN **/
+/** HOME **/
 
 .introduction {
     margin-top: 50px;
@@ -284,9 +293,9 @@ header {
     font-family: var(--font-eaves);
     text-align: center;
     color: black;
-    font-size: 2em;
-    text-decoration: none;
-    padding: 5px;
+    font-size: 1.3em;
+    text-decoration: underline;
+    padding: 20px;
     margin: 40px auto;
 }
 
@@ -305,10 +314,6 @@ header {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-}
-
-.blog-specific p {
-    font-size: 1.5em;
 }
 
 /** MAIN ABOUT **/
@@ -385,6 +390,10 @@ textarea {
     color: black;
     font-size: 1.2em;
     text-transform: uppercase;
+}
+
+.feedback-label {
+    font-family: var(--font-eaves);
 }
 
 #send:disabled {
