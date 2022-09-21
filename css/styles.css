@@ -428,6 +428,10 @@ textarea {
         max-width: 500px;
     }
 
+    .arrow {
+        width: 40px;
+    }
+
     
 }
 
@@ -459,7 +463,7 @@ textarea {
     }
 
     .arrow {
-        width: 50px;
+        width: 60px;
     }
 
     .latest-container {
