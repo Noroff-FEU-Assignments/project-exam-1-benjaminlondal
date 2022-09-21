@@ -2,6 +2,7 @@ import { showLoadingIndicator, hideLoadingIndicator } from "./components/loading
 
 const blogContainer = document.querySelector(".blog-content");
 const loadMoreBtn = document.getElementById("load-more");
+const search = document.querySelector(".searchbar");
 let pageNr = 0;
 
 
@@ -32,8 +33,6 @@ async function getBlogs() {
             const blogImage = blogPost._embedded["wp:featuredmedia"]?.[0]["source_url"] ?? "https://via.placeholder.com/150";
             const blogImageAlt = blogPost._embedded["wp:featuredmedia"]?.[0].alt_text ?? "Missing alt text";
 
-            console.log(blogImageAlt);
-
             blogContainer.innerHTML += `<div class="blog-container">
                                             <p>${blogPost.modified}</p>
                                             <a href="blog-specific.html?id=${blogPost.id}"><img src="${blogImage}" alt="${blogImageAlt}" class="blogposts-image specific-image"></a>
@@ -42,13 +41,33 @@ async function getBlogs() {
                                             <a href="blog-specific.html?id=${blogPost.id}" class="post-link">View post</a>
                                         </div>`;
 
+
+                                        search.oninput = function (event) {
+                                            const searchValue = event.target.value.trim().toLowerCase();
+                                        
+                                            const filteredBlogs = blogPosts.filter(function (blog) {
+                                                if (blogPost.title.rendered.toLowerCase().startsWith(searchValue)) {
+                                                    return true;
+                                                }
+                                                
+                                            });
+                                            console.log(filteredBlogs);
+
+                                        };
+                                        
         });
 
     } catch(error) {
         console.log(error);
+                blogContainer.innerHTML += `<div class="blog-container">
+                <p>The blog posts seems to have vanished into thin air! Please try again later.</p>
+                </div>`;
+                hideLoadingIndicator()
+
     }
 
 }
+
 
 
 loadMoreBtn.addEventListener('click', getBlogs);
