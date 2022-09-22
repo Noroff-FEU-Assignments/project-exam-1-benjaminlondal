@@ -1,5 +1,5 @@
 import { showLoadingIndicator, hideLoadingIndicator } from "./components/loadingindicator.js";
-
+const blogContainer = document.querySelector(".blog-content");
 const loadMoreBtn = document.getElementById("load-more");
 let pageNr = 0;
 
@@ -47,9 +47,7 @@ function postTemplate(postData) {
 }
 
 function renderPosts(postList) {
-	const blogContainer = document.querySelector(".blog-content");
 
-	blogContainer.innerHTML = "";
 
 	postList.forEach(function (post) {
 		blogContainer.innerHTML += postTemplate(post);
@@ -57,7 +55,7 @@ function renderPosts(postList) {
 }
 
 function setSearchListener(postList) {
-	const search = document.querySelector(".searchbar");
+	const search = document.querySelector(".searchbar"); 
 
 	search.oninput = function (event) {
 		const searchValue = event.target.value.trim().toLowerCase();
@@ -67,6 +65,7 @@ function setSearchListener(postList) {
 }
 
 function filterPosts(searchValue, postsList) {
+    blogContainer.innerHTML = "";
 	const filteredPosts = postsList.filter(function (postData) {
 		if (postData.title.rendered.toLowerCase().includes(searchValue) || postData.excerpt.rendered.toLowerCase().includes(searchValue)) {
 			return true;
@@ -76,6 +75,6 @@ function filterPosts(searchValue, postsList) {
 	return filteredPosts;
 }
 
-setup().then(console.log);
+setup();
 
 loadMoreBtn.addEventListener("click", setup);
