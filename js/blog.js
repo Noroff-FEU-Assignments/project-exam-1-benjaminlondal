@@ -61,19 +61,19 @@ function renderPosts(blogPosts) {
                                     </div>`;
     });
 
-    search.oninput = function (event) {
-        const searchValue = event.target.value.trim().toLowerCase();
-    
-        const filteredBlogs = blogPosts.filter(function (blogPost) {
-            if (blogPost.title.rendered.toLowerCase().includes(searchValue) || blogPost.excerpt.rendered.toLowerCase().includes(searchValue)) {
-                return true;
-            }
-            
-        });
+};
 
-        renderPosts(filteredBlogs);
-    };
+search.oninput = function (event) {
+    const searchValue = event.target.value.trim().toLowerCase();
 
+    const filteredBlogs = blogPosts.filter(function (blogPost) {
+        if (blogPost.title.rendered.toLowerCase().includes(searchValue) || blogPost.excerpt.rendered.toLowerCase().includes(searchValue)) {
+            return true;
+        }
+        
+    });
+
+    renderPosts(filteredBlogs);
 };
 
 
