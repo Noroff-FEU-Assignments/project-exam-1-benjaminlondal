@@ -31,7 +31,7 @@ async function getPost(postUrl){
                                     <div class="blog-specific">
                                         <h1>${post.title.rendered}</h1>
                                         <img  src="${blogImage}" alt="${blogImageAlt}" id="modal-image" class="blogposts-image specific-image">
-                                        <p>${post.content.rendered}</p>
+                                        ${post.content.rendered}
                                     </div>`;
 
       const modal = document.querySelector(".modal");

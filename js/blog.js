@@ -38,7 +38,7 @@ function postTemplate(postData) {
 	const blogImageAlt = postData._embedded["wp:featuredmedia"]?.[0].alt_text ?? "Missing alt text";
 
 	return `<div class="blog-container">
-            <p>${postData.modified}</p>
+            <p>${postData.formatted_date}</p>
             <a href="blog-specific.html?id=${postData.id}"><img src="${blogImage}" alt="${blogImageAlt}" class="blogposts-image specific-image"></a>
             <h2>${postData.title.rendered}</h2>
             <p>${postData.excerpt.rendered}</p>
@@ -74,6 +74,7 @@ function filterPosts(searchValue, postsList) {
 
 	return filteredPosts;
 }
+
 
 setup();
 
