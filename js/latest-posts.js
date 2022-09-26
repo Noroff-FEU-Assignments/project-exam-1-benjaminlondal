@@ -1,8 +1,7 @@
 import { showLoadingIndicator, hideLoadingIndicator } from "./components/loadingindicator.js";
 
-const blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?_embed";
+const blogPostsUrl = "https://blog-api-posts.dvergnir.one/wp-json/wp/v2/posts?_embed&per_page=9";
 const postContainer = document.querySelector(".latest-container");
-const latestPosts = document.querySelector(".latest-posts");
 const slider = document.getElementById("slider");
 const leftBtn = document.getElementById("slide-left");
 const rightBtn = document.getElementById("slide-right");
@@ -17,6 +16,8 @@ async function getBlogs(blogPostsUrl){
         const blogPosts = await response.json();
 
         hideLoadingIndicator()
+
+        console.log(blogPosts);
 
         blogPosts.forEach(function(blogPosts) {
 
@@ -40,16 +41,11 @@ async function getBlogs(blogPostsUrl){
 
 
 leftBtn.addEventListener("click", () => {
-    slider.scrollBy(-870, 0);
+    slider.scrollBy(-885, 0);
 });
 
 rightBtn.addEventListener("click", () => {
-    slider.scrollBy(870, 0);
-});
-
-window.addEventListener("resize", function() {
-   let width = slider.offsetWidth;
+    slider.scrollBy(885, 0);
 });
 
 getBlogs(blogPostsUrl);
-
