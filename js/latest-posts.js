@@ -25,6 +25,7 @@ async function getBlogs(blogPostsUrl){
             const blogImageAlt = blogPosts._embedded["wp:featuredmedia"]?.[0].alt_text ?? "Missing alt text";
 
             postContainer.innerHTML += `<div class="latest-posts">
+                                            <p>${blogPosts.formatted_date}</p>
                                             <a href="blog-specific.html?id=${blogPosts.id}" class="card"><img src="${blogImage}" alt="${blogImageAlt}" class="blogposts-image specific-image">
                                             <h3 id="latest-heading">${blogPosts.title.rendered}</h3>
                                             <p>${blogPosts.excerpt.rendered}</p>

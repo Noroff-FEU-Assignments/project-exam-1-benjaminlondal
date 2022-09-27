@@ -287,6 +287,10 @@ header {
     margin: 50px auto 0px;
 }
 
+.blog-container p, .blog-container h2 {
+    text-align: left;
+}
+
 .blogposts-image {
     width: 100%;
     margin: 0 auto;
@@ -303,9 +307,16 @@ header {
     margin: 100px auto;
     padding: 10px;
     background: rgba(243, 227, 0, 0.5);
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
+    transform: scale(.95);
+
+}
+
+#load-more:hover {
+    box-shadow: 5px 10px black;
+    transform: scale(1);
 }
 
 .scroll-top {
