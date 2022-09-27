@@ -16,8 +16,6 @@ body {
 
 main {
     background-image: url("/images/background.png");
-    background: contain no-repeat;
-    padding-bottom: 30px;
 }
 
 
@@ -46,11 +44,11 @@ h3, #latest-heading {
     max-width: 250px;
     margin: 0 auto;
     border-radius: 10px;
-    background-color: white;
     padding: 10px;
     font-size: 1.2em;
     font-family: var(--font-eaves);
 }
+
 .postlink {
     display: block;
     text-decoration: underline;
@@ -129,9 +127,14 @@ nav a {
     display: block;
     text-decoration: none;
     margin: 10px;
-    font-size: 1.6em;
+    font-size: 1.8em;
     color: black;
     font-family: var(--font-eaves);
+    transform: scale(.9);
+}
+
+nav a:hover {
+    transform: scale(1);
 }
 
 .logo, .logo-text {
@@ -285,6 +288,11 @@ header {
 .blog-container {
     max-width: 300px;
     margin: 50px auto 0px;
+    transition: all .2s ease-in-out;
+}
+
+.blog-container:hover {
+    transform: scale(1.1);
 }
 
 .blog-container p, .blog-container h2 {
@@ -301,20 +309,21 @@ header {
     max-height: 290px;
 }
 
-#load-more {
+#load-more, #send {
     display: block;
     font-size: 1.5em;
-    margin: 100px auto;
+    margin: 50px auto;
     padding: 10px;
     background: rgba(243, 227, 0, 0.5);
     border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
     transform: scale(.95);
-
+    width: 100%;
+    max-width: 250px;
 }
 
-#load-more:hover {
+#load-more:hover, #send:hover {
     box-shadow: 5px 10px black;
     transform: scale(1);
 }
@@ -409,23 +418,20 @@ textarea {
     height: 200px;
 }
 
-#send {
+/**#send {
     width: 100%;
     margin-top: 25px;
     padding: 5px;
     cursor: pointer;
-    -webkit-box-shadow: inset 0px 0px 77px -25px rgba(243,227,0,1);
-    -moz-box-shadow: inset 0px 0px 77px -25px rgba(243,227,0,1);
-    box-shadow: inset 0px 0px 77px -25px rgba(243,227,0,1);
-}
+    background: rgba(243, 227, 0, 0.5);
+    transform: scale(0.95);
+}**/
 
 .feedback {
     display: none;
     text-align: center;
-    border: 2px solid red;
-    border-radius: 5px;
     margin-top: 10px;
-    color: black;
+    color: red;
     font-size: 1.2em;
 }
 
@@ -435,7 +441,7 @@ textarea {
 
 #send:disabled {
     cursor: not-allowed;
-    background-color: grey;
+    background-color: lightgrey;
 }
 
 @media (min-width: 600px) {

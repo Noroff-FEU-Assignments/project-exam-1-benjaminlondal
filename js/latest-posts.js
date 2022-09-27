@@ -29,7 +29,7 @@ async function getBlogs(blogPostsUrl){
                                             <a href="blog-specific.html?id=${blogPosts.id}" class="card"><img src="${blogImage}" alt="${blogImageAlt}" class="blogposts-image specific-image">
                                             <h3 id="latest-heading">${blogPosts.title.rendered}</h3>
                                             <p>${blogPosts.excerpt.rendered}</p>
-                                            <a href="blog-specific.html?id=${blogPosts.id}" class="post-link latest-link">Read more</a>
+                                            <a href="blog-specific.html?id=${blogPosts.id}" class="post-link latest-link">View post</a>
                                             </a>
                                         </div>`;
 
