@@ -16,7 +16,7 @@ body {
 
 main {
     background-image: url("/images/background.png");
-    background-size: contain no-repeat;
+    background: contain no-repeat;
     padding-bottom: 30px;
 }
 
