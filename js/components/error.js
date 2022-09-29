@@ -1,7 +1,6 @@
 export function displayErrorMessage() {
-    blogContainer.innerHTML += `<div class="blog-container">
-                <p>The blog posts seems to have vanished into thin air! Please try again later.</p>
+  const errorMessage = document.querySelector(".error-message");
+  errorMessage.innerHTML += `<div class="err-msg-container">
+                <p>We can't seem to find the posts. Please try again later.</p>
                 </div>`;
-                hideLoadingIndicator()
-                loadMoreBtn.style.display = "none";
-};
+}
