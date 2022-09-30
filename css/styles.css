@@ -277,6 +277,15 @@ p {
   width: 100%;
   max-width: 250px;
 }
+
+.search-label {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .blog-content {
   display: flex;
   flex-direction: column;
