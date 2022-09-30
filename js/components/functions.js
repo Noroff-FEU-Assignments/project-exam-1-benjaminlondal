@@ -12,3 +12,11 @@ export function displayNavigation() {
 
   hamburgerMenu.onclick = displayHamburgerMenu;
 }
+
+export function checkScreenWidth() {
+  const nav = document.querySelector("nav");
+  const screenWidth = window.innerWidth;
+  if (screenWidth <= 1024) {
+    nav.style.display = "none";
+  }
+}
