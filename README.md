@@ -13,6 +13,7 @@ A blog about mead and meaderies from around the world. The blog was made with th
 - HTML5
 - CSS3
 - Javascript
+- Wordpress REST API
 
 ## Getting Started
 
